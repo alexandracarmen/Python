@@ -42,9 +42,13 @@ def stock_update():
     return ar_new_inventory
 
 if __name__ == "__main__":
-    nr_of_days =  int(input("Dati nr de zile pentru care trebuie calculat inventarul:"))
-    result =stock_update()
-    print (f"Inventarul curent:{ar_inventory}")
-    print(f"Produse din istoricul comenzilor: {ar_history}")
-    print(f"Comanda urmatoare:{result}")
+    try:
+        nr_of_days = int(input("Dati nr de zile pentru care trebuie calculat inventarul:"))
+    except:
+        print("Input invalid!")
+    else:
+        result = stock_update()
+        print(f"Inventarul curent:{ar_inventory}")
+        print(f"Produse din istoricul comenzilor: {ar_history}")
+        print(f"Comanda urmatoare:{result}")
   
