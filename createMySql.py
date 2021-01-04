@@ -13,6 +13,6 @@ my_cursor.execute("CREATE DATABASE StockBuster")
 my_cursor.execute("USE StockBuster")
 
 my_cursor.execute(
-    "CREATE TABLE inventory ( product_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, produs VARCHAR(100) NOT NULL, nr_de_produse INT NOT NULL)")
+    "CREATE TABLE inventory ( product_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, product VARCHAR(100) NOT NULL, nr_of_products INT NOT NULL)")
 my_cursor.execute(
-    "CREATE TABLE sales_history(product_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, produs VARCHAR(100) NOT NULL, nr_de_produse INT NOT NULL, sale_date DATE)")
+    "CREATE TABLE sales_history(product_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, product VARCHAR(100) NOT NULL, nr_of_products INT NOT NULL, sale_date DATE)")
