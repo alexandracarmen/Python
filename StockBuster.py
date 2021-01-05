@@ -10,7 +10,7 @@ my_db = mysql.connector.connect(
 my_cursor = my_db.cursor()
 
 
-def stock_update():
+def stock_update(nr_of_days):
     global ar_history
     ar_history = []
     my_cursor.execute(
@@ -19,7 +19,7 @@ def stock_update():
     for x in my_result:
         ar_history.append(x)
     
-    global nr_of_days, ar_inventory
+    global ar_inventory
     ar_inventory = []
     my_cursor.execute(
         "SELECT product, nr_of_products FROM inventory;")
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     except:
         print("Input invalid!")
     else:
-        result = stock_update()
+        result = stock_update(nr_of_days)
         print(f"Inventarul curent:{ar_inventory}")
         print(f"Produse din istoricul comenzilor: {ar_history}")
         print(f"Comanda urmatoare:{result}")
