@@ -27,9 +27,8 @@ def stock_update():
     for x in my_result:
         ar_inventory.append(x) 
      
-    for x in ar_history:
-                if (x[1] * nr_of_days) - x[1] > 0:
-                    print(x[0] + ":", (x[1] * nr_of_days) - x[1])
+    for x in ar_history[1]:
+        x = x * nr_of_days
            
     ar_new_inventory = []
     for history_item in ar_history:
