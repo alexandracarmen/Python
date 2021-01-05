@@ -26,7 +26,12 @@ def stock_update():
     my_result = my_cursor.fetchall()
     for x in my_result:
         ar_inventory.append(x) 
-
+        
+    ar_history[1]
+    for x in ar_history:
+                if (x[1] * nr_of_days) - x[1] > 0:
+                    print(x[0] + ":", (x[1] * nr_of_days) - x[1])
+           
     ar_new_inventory = []
     for history_item in ar_history:
         ar_new_inventory.append ((history_item[0], int(history_item[1])))
